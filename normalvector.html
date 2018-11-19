@@ -1,0 +1,71 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script src="/vendor/sigmajs/sigma.core.js"></script>
+<script src="/vendor/sigmajs/conrad.js"></script>
+<script src="/vendor/sigmajs/utils/sigma.utils.js"></script>
+<script src="/vendor/sigmajs/utils/sigma.polyfills.js"></script>
+<script src="/vendor/sigmajs/sigma.settings.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.dispatcher.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.configurable.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.graph.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.camera.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.quad.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.edgequad.js"></script>
+<script src="/vendor/sigmajs/captors/sigma.captors.mouse.js"></script>
+<script src="/vendor/sigmajs/captors/sigma.captors.touch.js"></script>
+<script src="/vendor/sigmajs/renderers/sigma.renderers.canvas.js"></script>
+<script src="/vendor/sigmajs/renderers/sigma.renderers.webgl.js"></script>
+<script src="/vendor/sigmajs/renderers/sigma.renderers.svg.js"></script>
+<script src="/vendor/sigmajs/renderers/sigma.renderers.def.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.edges.def.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.labels.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edges.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.utils.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.nodes.def.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.edges.def.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.edges.curve.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.labels.def.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.hovers.def.js"></script>
+<script src="/vendor/sigmajs/middlewares/sigma.middlewares.rescale.js"></script>
+<script src="/vendor/sigmajs/middlewares/sigma.middlewares.copy.js"></script>
+<script src="/vendor/sigmajs/misc/sigma.misc.animation.js"></script>
+<script src="/vendor/sigmajs/misc/sigma.misc.bindEvents.js"></script>
+<script src="/vendor/sigmajs/misc/sigma.misc.bindDOMEvents.js"></script>
+<script src="/vendor/sigmajs/misc/sigma.misc.drawHovers.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<p>
+<b>Claim:</b><br> If there is a plane $ax + by + cz = d$, then $\langle a, b, c  \rangle$ is a vector normal to the plane. <br><br>
+
+<b>Proof:</b><br>
+Any two points on the plane $(x_0, y_0, z_0)$ and $(x_1, y_1, z_1)$ satisfy $ax_0 + by_0 + cz_0 = d$ and $ax_1 + by_1 + cz_1 = d$. <br>
+Moreover the vector $\langle x_0 - x_1, y_0 - y_1 , z_0 - z_1  \rangle$ lies on the plane.<br>
+Thus <br>$\langle x_0 - x_1, y_0 - y_1 , z_0 - z_1  \rangle \cdot \langle a, b, c  \rangle$<br>
+$=a(x_0 - x_1) + b(y_0 - y_1) 	+ c (z_0 - z_1)$ <br>
+$= ax_0 + by_0 + cz_0 - ax_1 - by_1 - cz_1$ <br>
+$= d - d $ <br>	
+$= 0$ <br>
+Since the dot product is 0, $\langle a, b, c  \rangle$ is perpendicular to any vector on the plane. <br>
+This proof can be similarly extended to any nth dimensional plane for a nth dimensional vector. <br>
+</p>
