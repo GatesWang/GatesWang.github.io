@@ -1,0 +1,130 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script src="/vendor/sigmajs/sigma.core.js"></script>
+<script src="/vendor/sigmajs/conrad.js"></script>
+<script src="/vendor/sigmajs/utils/sigma.utils.js"></script>
+<script src="/vendor/sigmajs/utils/sigma.polyfills.js"></script>
+<script src="/vendor/sigmajs/sigma.settings.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.dispatcher.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.configurable.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.graph.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.camera.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.quad.js"></script>
+<script src="/vendor/sigmajs/classes/sigma.classes.edgequad.js"></script>
+<script src="/vendor/sigmajs/captors/sigma.captors.mouse.js"></script>
+<script src="/vendor/sigmajs/captors/sigma.captors.touch.js"></script>
+<script src="/vendor/sigmajs/renderers/sigma.renderers.canvas.js"></script>
+<script src="/vendor/sigmajs/renderers/sigma.renderers.webgl.js"></script>
+<script src="/vendor/sigmajs/renderers/sigma.renderers.svg.js"></script>
+<script src="/vendor/sigmajs/renderers/sigma.renderers.def.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.nodes.def.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.nodes.fast.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.edges.def.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.edges.fast.js"></script>
+<script src="/vendor/sigmajs/renderers/webgl/sigma.webgl.edges.arrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.labels.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edges.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+<script src="/vendor/sigmajs/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.utils.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.nodes.def.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.edges.def.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.edges.curve.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.labels.def.js"></script>
+<script src="/vendor/sigmajs/renderers/svg/sigma.svg.hovers.def.js"></script>
+<script src="/vendor/sigmajs/middlewares/sigma.middlewares.rescale.js"></script>
+<script src="/vendor/sigmajs/middlewares/sigma.middlewares.copy.js"></script>
+<script src="/vendor/sigmajs/misc/sigma.misc.animation.js"></script>
+<script src="/vendor/sigmajs/misc/sigma.misc.bindEvents.js"></script>
+<script src="/vendor/sigmajs/misc/sigma.misc.bindDOMEvents.js"></script>
+<script src="/vendor/sigmajs/misc/sigma.misc.drawHovers.js"></script>
+<script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+<p>
+<b>Claim:</b><br> 
+Given $n+1$ points where all $x_i$ are unique <br>
+<br> 
+$
+\begin{array}{c|cc}
+\text{X} & \text{Y} \\
+\hline
+x_0 & y_0 \\
+x_1 & y_1 \\
+x_2 & y_2 \\
+... & ... \\
+x_n & y_n 
+\end{array}
+$
+<br>
+We can find a polynomial approximation of $n$ degree for these points .<br><br>
+
+<b>Proof:</b><br>
+We want to find a polynomial such that for each $ (x_i. y_i)$ the following equation is satisfied<br>  
+$a_nx_i^n + a_{n-1}x_i^{n-1} + a_{n-2}x_i^{n-2} + ... + a_1x_i + a_0 = y_i$.<br>
+<br>
+<br>
+In other words we want the following equations satisfied.<br>
+$a_nx_0^n + a_{n-1}x_0^{n-1} + a_{n-2}x_0^{n-2} + ... + a_1x_0 +a_0 = y_0$<br>
+$a_nx_1^n + a_{n-1}x_1^{n-1} + a_{n-2}x_1^{n-2} + ... + a_1x_1 +a_0 = y_1$<br>
+$a_nx_2^n + a_{n-1}x_2^{n-1} + a_{n-2}x_2^{n-2} + ... + a_1x_2 +a_0 = y_2$<br>
+.<br>
+.<br>
+.<br>
+$a_nx_n^n + a_{n-1}x_n^{n-1} + a_{n-2}x_n^{n-2} + ... + a_1x_n +a_0 = y_n$<br>
+Putting this system into matrix form yields <br>
+
+$
+\begin{bmatrix}
+x_0^n & x_0^{n-1} & ... & x_0 & 1\\
+x_1^n & x_1^{n-1} & ... & x_1 & 1\\
+x_2^n & x_2^{n-1} & ... & x_2 & 1\\
+\vdots \\
+x_n^n & x_n^{n-1} & ... & x_n & 1\\
+\end{bmatrix}
+\begin{bmatrix}
+           a_{n} \\
+           a_{n-1} \\
+           \vdots \\
+           a_{1} \\
+           a_{0}
+         \end{bmatrix}
+$
+$
+= \begin{bmatrix}
+  y_{0}  \\
+  y_{1}  \\
+  y_{2}  \\
+  \vdots \\
+  y_{n} 
+\end{bmatrix}
+$
+<br><br>
+
+To prove that a solution exists we must find an inverse to our matrix. <br>
+This is a Vandermonde matrix which has a known determinant of 
+<br>
+${ \displaystyle \prod_{1 \le i \le j \le n} (x_{j} - x_{i})}$
+<br>
+Since all $ x_i $ are unique, the determinant is nonzero.
+<br>
+<br>
+<small>This problem was solved with the help of a peer, Zack Ni.</small>
+<a href="lecture11.pdf"><small>Here is a lecture on the same topic by my professor</small></a>
+</p>
+
+
