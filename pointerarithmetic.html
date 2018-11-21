@@ -62,7 +62,7 @@ Then $v[x][y][z]$ is stored at index $v + (x * y_{range} + y) * z_{range} + z$, 
 
 <b>Proof:</b><br>
   <image src="GatesWang.github.io/pointerrithmetic.jpg"></image><br>
-In the diagram above we see that $x_{range} = 4$ , $y_{range} = 3$, and $z_{range} = 2$. <br>
+In the diagram above we see that $x_{range} = 3$ , $y_{range} = 3$, and $z_{range} = 2$. <br>
 If we use a tree diagram, we reduce the problem to counting the number of nodes in the bottom layer.<br>
 The number of nodes for $v[x][y][z]$ is calculated as $(x*3*2) + (y*2) + (z)$. <br>
 Take for example $v[0][1][1]$, the index will be $ v + (0*3*2) + (1*2) + (1) = v + 3$ <br>
