@@ -61,8 +61,7 @@ Then $v[x][y][z]$ is stored at index $v + (x * y_{range} + y) * z_{range} + z$, 
 <br><br>
 
 <b>Proof:</b><br>
-<img src="pointerarithmetic.jpg" alt="Figure 1">
-<br>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/KXZIvjL"><a href="//imgur.com/KXZIvjL"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script><br>
 In the diagram above we see that $x_{range} = 4$ , $y_{range} = 3$, and $z_{range} = 2$. <br>
 If we use a tree diagram, we reduce the problem to counting the number of nodes in the bottom layer.<br>
 The number of nodes to the left of $v[x][y][z]$ is calculated as $(x*3*2) + (y*2) + (z)$. <br>
