@@ -1,0 +1,26 @@
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+   MathJax.Hub.Config({
+     tex2jax: {
+       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+       processEscapes: true
+     },
+   	TeX: {extensions: ["AMSmath.js","AMSsymbols.js"]}
+   });
+</script>
+<p>
+   <b>Question:</b> What is the approximate value of $\sqrt{122}$<br>
+   <b>Answer:</b><br>
+   We try to approximate by noticing that $122 \approx 121 = 11^2$
+   <br>
+   	We therefore use the equation <br>
+	$(11+x)^2 = 122$ <br>
+	$11^2 + 2(11)(x) + x^2 = 122$ <br>
+   	Since $11^2$ is the closest perfect square we know that $x<1$ <br>
+	Therefore $x^2$ is relatively small and we can ignore that term <br>
+	Our new equation is $11^2 + 2(11)(x) = 122$ <br>
+	Solving for x yields $x = \frac{1}{2(11)} = .045$ <br>
+	The true value of $\sqrt{122} = 11.0453610172$ <br>
+	So the true value of $x = 0453610172$, Therefore $x^2$ is of course going to be very small. <br>
+	In general this method will work for numbers that are close to perfect squares. 
+</p>
